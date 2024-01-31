@@ -21,3 +21,10 @@ bntCloseModal.addEventListener('click', closeModal);
 
 overlay.addEventListener('click', closeModal);
 
+// key board entry
+document.addEventListener('keydown', function(event){
+  if (event.key === 'Escape' && !modal.classList.contains('hidden') ){
+    closeModal();
+  };
+});
+
