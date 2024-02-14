@@ -1,3 +1,4 @@
+'USE STRICT';
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const restaurant = {
@@ -33,29 +34,13 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIdx]} and ${this.mainMenu[mainIdx]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`here is your pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(mainIng);
+    console.log(otherIng);
+  },
 };
-
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'blalala',
-  mainIndex: 2,
-  starterIdx: 2,
-});
-
-// desserts = []: default value if not exists
-const { name, openingHours, categories, desserts = [] } = restaurant;
-//console.log(name, openingHours, categories, desserts);
-
-// mutating variables
-
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
-// need to wrap the parameter into ()
-({ a, b } = obj);
-
-// nested objects
-const {
-  thu: { open, close },
-} = openingHours;
-console.log(open, close);
