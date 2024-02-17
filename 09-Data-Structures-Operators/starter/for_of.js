@@ -45,10 +45,10 @@ const restaurant = {
   },
 };
 
-restaurant.numGuest = 0;
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-const guests = restaurant.numGuest || 10;
-console.log(restaurant.numGuest);
+//for (const item of menu) console.log(item);
 
-const guestCorrect = restaurant.numGuest ?? 10;
-console.log(guestCorrect);
+for (const items of menu.entries()) {
+  console.log(items[0]);
+}

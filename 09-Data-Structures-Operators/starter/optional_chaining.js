@@ -45,10 +45,25 @@ const restaurant = {
   },
 };
 
-restaurant.numGuest = 0;
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
 
-const guests = restaurant.numGuest || 10;
-console.log(restaurant.numGuest);
+for (const day of weekdays) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'Closed';
+  console.log(day, open);
+}
 
-const guestCorrect = restaurant.numGuest ?? 10;
-console.log(guestCorrect);
+// methods
+
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+//Array
+
+const users = {
+  name: 'John wick',
+  email: 'john wick@mail.com',
+};
+
+console.log(users[0]?.lastName ?? 'User lastname empty');

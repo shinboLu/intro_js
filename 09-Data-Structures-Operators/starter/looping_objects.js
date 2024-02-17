@@ -45,10 +45,26 @@ const restaurant = {
   },
 };
 
-restaurant.numGuest = 0;
+// looping keys
 
-const guests = restaurant.numGuest || 10;
-console.log(restaurant.numGuest);
+const properties = Object.keys(restaurant.openingHours);
 
-const guestCorrect = restaurant.numGuest ?? 10;
-console.log(guestCorrect);
+console.log(properties);
+
+for (const day of Object.keys(restaurant.openingHours)) {
+  console.log(day);
+}
+
+// looping values
+
+const values = Object.values(restaurant.openingHours);
+console.log(values);
+
+// looping entire objec
+
+const kv_pair = Object.entries(restaurant.openingHours);
+console.log(kv_pair);
+
+for (const [key, { open, close }] of kv_pair) {
+  console.log(`On ${key}, we open at ${open} and close at ${close}`);
+}

@@ -44,11 +44,3 @@ const restaurant = {
     console.log(otherIng);
   },
 };
-
-restaurant.numGuest = 0;
-
-const guests = restaurant.numGuest || 10;
-console.log(restaurant.numGuest);
-
-const guestCorrect = restaurant.numGuest ?? 10;
-console.log(guestCorrect);
